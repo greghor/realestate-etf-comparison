@@ -1,0 +1,5 @@
+ipython
+pandas
+numpy
+numpy-financial
+xlrd
