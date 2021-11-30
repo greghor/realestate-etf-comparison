@@ -2,7 +2,7 @@ The script `re_etf_comparison.py` allows you to compare RE and ETF investments u
 
 ##### Setup
 
-Create a decicated environment and install the `requirements` with your favorite package manager. If you're using conda for instance
+Create a decicated environment and install the requirements with your favorite package manager. If you're using conda for instance
 
 ```
    conda create -n <my-env> python=3.9
