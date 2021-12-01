@@ -1,4 +1,4 @@
-The script `re_etf_comparison.py` allows you to compare RE and ETF investments using Monte Carlo simulation.
+ `re_etf_comparison.ipynb` showcases how to compare RE and ETF investments using Monte Carlo simulation.
 
 ##### Setup
 
@@ -6,12 +6,7 @@ Create a decicated environment and install the requirements with your favorite p
 
 ```
    conda create -n <my-env> python=3.9
-   conda install -f requirements.txt
    conda activate <my-env>
+   conda install --file requirements.txt -c conda-forge -y
 ```
-
-##### To do 
-
-Turn script into a demo notebook including technical explanation
-
 
