@@ -174,7 +174,6 @@ ax1.plot([etf_ptf_returns.mean()]*2, ylims, color="r", linestyle="--", label="ET
 ax1.title.set_text("distribution of the total returns at year 30")
 ax1.set_xlabel("returns")
 ax1.legend()
-ax1.grid(which="both", ls="-", color='0.70')
 plt.show(block=False)
 
 print(f"property value stat: {re_values.T.describe(percentiles=PLOT_PERCENTILES).T.iloc[-1]}")
