@@ -3,3 +3,7 @@ pandas
 numpy
 numpy-financial
 xlrd
+matplotlib
+jupyterlab
+pytest
+nbval
