@@ -1,7 +1,10 @@
 from matplotlib.axes import Axes
+from matplotlib import ticker
 import pandas as pd
 from typing import List, Tuple
 import numpy as np
+from math import log10, floor
+
 
 def initialize_values(initial_value: float, shapes: List) -> pd.DataFrame:
     """ create df of shape shapes, filled with zeros except for the first line
@@ -94,3 +97,10 @@ def plot_interval(df: pd.DataFrame, ax: Axes, color: str,
         ax.plot(x_ticks, df[line], color=color, linestyle=linestyles[ii], label=legend_prefix + line)
     ax.legend(loc=legend_loc)
     return ax
+
+
+def format_func(value, tick_number=None):
+    num_thousands = 0 if abs(value) < 1000 else floor(log10(abs(value))/3)
+    value = round(value / 1000**num_thousands, 2)
+    return f'{value:g}'+' KMGTPEZY'[num_thousands]
+

@@ -5,7 +5,7 @@ import matplotlib
 import numpy as np
 from numpy.random import normal
 import numpy_financial as npf
-from utils import initialize_values, compound, plot_interval
+from utils import initialize_values, compound, plot_interval, format_func
 # %
 
 #############
@@ -111,14 +111,17 @@ ax1.set_ylabel("")
 ax1.set_xlabel("year")
 ax1.set_title("Property value")
 ax1.set_yscale("log")
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
+ax1.yaxis.set_minor_formatter(plt.FuncFormatter(format_func))
 plt.show(block=False)
 
 fig, ax1 = plt.subplots()
 ax1 = plot_interval(yearly_cash_flow_summary, ax1, color="grey")
 ax1.set_title("cash flow")
 ax1.set_xlabel("year")
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 plt.show(block=False)
 
 
@@ -127,11 +130,13 @@ ax1 = plot_interval(re_summary, ax1, color="blue")
 ax1.title.set_text("RE portfolio value")
 ax1.set_xlabel("year")
 ax1.set_yscale("log")
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 ax2 = plot_interval(total_re_invested_amounts_summary, ax2, color="grey")
 ax2.title.set_text("total invested capital")
 ax2.set_xlabel("year")
-ax2.grid()
+ax2.grid(which="both", ls="-", color='0.70')
+ax2.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 plt.show(block=False)
 
 fig, ax1 = plt.subplots()
@@ -140,7 +145,8 @@ ax1.set_ylabel("")
 ax1.set_xlabel("year")
 ax1.set_title("ETF portflio value")
 ax1.set_yscale("log")
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 plt.show(block=False)
 
 
@@ -150,7 +156,8 @@ ax1 = plot_interval(etf_summary, ax1, color="red", fills=[("10%", "90%")], alpha
 ax1.set_xlabel("year")
 ax1.set_title("RE vs ETF portfolios values")
 ax1.set_yscale("log")
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
+ax1.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 plt.show(block=False)
 
 fig, ax1 = plt.subplots()
@@ -167,7 +174,7 @@ ax1.plot([etf_ptf_returns.mean()]*2, ylims, color="r", linestyle="--", label="ET
 ax1.title.set_text("distribution of the total returns at year 30")
 ax1.set_xlabel("returns")
 ax1.legend()
-ax1.grid()
+ax1.grid(which="both", ls="-", color='0.70')
 plt.show(block=False)
 
 print(f"property value stat: {re_values.T.describe(percentiles=PLOT_PERCENTILES).T.iloc[-1]}")
